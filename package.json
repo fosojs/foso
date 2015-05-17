@@ -1,10 +1,7 @@
 {
   "name": "foso",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "A static server for bundling and serving JavaScripts.",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "repository": {
     "type": "git",
     "url": "https://github.com/zkochan/foso.git"
