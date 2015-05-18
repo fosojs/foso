@@ -1,7 +1,8 @@
 #!/usr/bin/env node
 
 'use strict';
-
+module.paths.push('/usr/local/lib/node_modules');
+module.paths.push('d:/Program Files/Node.js/node_modules');
 
 var program = require('commander');
 var pkg = require('./package');
