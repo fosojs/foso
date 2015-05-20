@@ -1,6 +1,6 @@
 {
   "name": "foso",
-  "version": "0.1.1",
+  "version": "0.2.1",
   "description": "A static server for bundling and serving JavaScripts.",
   "repository": {
     "type": "git",
@@ -29,6 +29,8 @@
     "glob-watcher": "^2.0.0",
     "gulp-rename": "^1.2.2",
     "gulp-uglify": "^1.2.0",
+    "jade": "^1.9.2",
+    "jadeify": "^4.3.0",
     "lodash": "^3.8.0",
     "node-lessify": "0.0.10",
     "serve-static": "^1.9.3",
