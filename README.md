@@ -22,13 +22,14 @@ Add and configure the [Foso Trojan](https://github.com/zkochan/foso-trojan) to a
 
 The project structure has to be the following in order to work with Foso.
 ```
-- target-page-type-1
- - index.js
-- target-page-type-2
- - index.js
+my-experiment
+ ├── target-page-type-1
+ │   └── index.js
+ ├── target-page-type-2
+ |   └── index.js
 ...
-- target-page-type n
- - index.js
+ └── target-page-type-n
+     └── index.js
 ```
 Running **foso serve** in the root directory will [browserify](http://browserify.org/) all the index.js files in the target folders and serve them on http://localhost:1769
 
@@ -49,22 +50,23 @@ To see how the scripts are affecting the website, run `foso.on()` in the console
 
 The project structure above only shows the files that will be used as entry points for browserify. However, the project can contain many other files and not only JavaScript files.
 ```
-- _components
- - live-chat
-  - index.js
-  - index.css
-  - index.html
-- target-page-type-1
- - index.css
- - foo-template.html
- - index.js
-- target-page-type-2
- - bar.js
- - foo.js
- - index.js
+my-experiment
+ ├── _components
+ |   └── live-chat
+ |       ├── index.js
+ |       ├── index.css
+ |       └── index.html
+ ├── target-page-type-1
+ |   ├── index.css
+ |   ├── foo-template.html
+ |   └── index.js
+ ├── target-page-type-2
+ |   ├── bar.js
+ |   ├── foo.js
+ |   └── index.js
 ...
-- target-page-type n
- - index.js
+ └── target-page-type-n
+     └── index.js
 ```
 Even though this project contains many js files, not all of them will be browserified. This are the rules that foso use to identify browserify entries:
 
