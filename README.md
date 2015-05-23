@@ -11,6 +11,8 @@ A/B testing tools like Optimizely are not good for code writing. Writing code in
 
 With Foso it is possible to write all the code in an editor and the page will be updated automatically each time the code changes were saved.
 
+You can read more about using Foso with Optimizely [here](http://zkochan.github.io/ab/2015/05/22/coding-ab-tests-effectively.html).
+
 ## How to install it?
 
 ```
