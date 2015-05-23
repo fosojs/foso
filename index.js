@@ -15,11 +15,13 @@ program
   .command('serve')
   .usage('[options]')
   .description('Starts a Foso server in current directory')
-  .action(function() {
+  .option('-m, --minify', 'Minify the resources')
+  .action(function(options) {
     var currentPath = path.resolve(process.cwd());
 
     serve(currentPath, {
-      buildFolder: getBuildFolder(currentPath)
+      buildFolder: getBuildFolder(currentPath),
+      minify: !!options.minify
     });
   });
 
@@ -27,11 +29,14 @@ program
   .command('build')
   .usage('[options]')
   .description('Bundles Foso scripts')
-  .action(function() {
+  .option('-m, --minify', 'Minify the resources')
+  .action(function(options) {
     var currentPath = path.resolve(process.cwd());
 
     bundle(currentPath, {
-      buildFolder: getBuildFolder(currentPath)
+      buildFolder: getBuildFolder(currentPath),
+      minify: !!options.minify,
+      watch: false
     });
   });
 
