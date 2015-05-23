@@ -16,7 +16,7 @@ program
   .command('serve')
   .usage('starts a Foso server in current directory')
   .description('Starts a Foso server in current directory')
-  .action(function () {
+  .action(function() {
     var currentPath = path.resolve(process.cwd());
     serve(currentPath);
   });
