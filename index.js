@@ -7,6 +7,7 @@ var pkg = require('./package');
 var path = require('path');
 var serve = require('./lib/server');
 var bundle = require('./lib/bundle');
+var updateNotifier = require('update-notifier');
 
 program
   .version(pkg.version);
@@ -17,6 +18,7 @@ program
   .description('Starts a Foso server in current directory')
   .option('-m, --minify', 'Minify the resources')
   .action(function(options) {
+    notify();
     var currentPath = path.resolve(process.cwd());
 
     serve(currentPath, {
@@ -31,6 +33,7 @@ program
   .description('Bundles Foso scripts')
   .option('-m, --minify', 'Minify the resources')
   .action(function(options) {
+    notify();
     var currentPath = path.resolve(process.cwd());
 
     bundle(currentPath, {
@@ -39,6 +42,14 @@ program
       watch: false
     });
   });
+
+function notify() {
+  updateNotifier({
+    pkg: pkg
+  }).notify({
+    defer: false
+  });
+}
 
 function getBuildFolder(currentPath) {
   return path.join(currentPath, './_build');
