@@ -1,6 +1,6 @@
 {
   "name": "foso",
-  "version": "0.4.2",
+  "version": "0.4.3",
   "description": "A static server for bundling and serving JavaScripts.",
   "repository": {
     "type": "git",
