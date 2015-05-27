@@ -38,13 +38,9 @@ Running **foso serve** in the root directory will [browserify](http://browserify
 The foso server will host the bundled resources:
 ```
 - target-page-type-1.js
-- target-page-type-1.min.js
-
 - target-page-type-2.js
-- target-page-type-2.min.js
 ...
 - target-page-type-n.js
-- target-page-type-n.min.js
 ```
 To see how the scripts are affecting the website, run `foso.on()` in the console of the page. Foso scripts will be always added to the page until `foso.off()` is executed.
 
