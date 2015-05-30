@@ -11,7 +11,7 @@ A/B testing tools like Optimizely are not good for code writing. Writing code in
 
 With Foso it is possible to write all the code in an editor and the page will be updated automatically each time the code changes were saved.
 
-You can read more about using Foso with Optimizely [here](http://zkochan.github.io/ab/2015/05/22/coding-ab-tests-effectively.html).
+You can read more about using Foso with Optimizely [here](http://kochan.io/ab/2015/05/22/coding-ab-tests-effectively.html).
 
 ## How to install it?
 
@@ -26,14 +26,14 @@ The project structure has to be the following in order to work with Foso.
 ```
 my-experiment
  ├── target-page-type-1
- │   └── index.js
+ │   └── bundle.js
  ├── target-page-type-2
- |   └── index.js
+ |   └── bundle.js
 ...
  └── target-page-type-n
-     └── index.js
+     └── bundle.js
 ```
-Running **foso serve** in the root directory will [browserify](http://browserify.org/) all the index.js files in the target folders and serve them on http://localhost:1769
+Running **foso serve** in the root directory will [browserify](http://browserify.org/) all the bundle.js files in the target folders and serve them on http://localhost:1769
 
 The foso server will host the bundled resources:
 ```
@@ -49,7 +49,7 @@ To see how the scripts are affecting the website, run `foso.on()` in the console
 The project structure above only shows the files that will be used as entry points for browserify. However, the project can contain many other files and not only JavaScript files.
 ```
 my-experiment
- ├── _components
+ ├── components
  |   └── live-chat
  |       ├── index.js
  |       ├── index.css
@@ -57,33 +57,17 @@ my-experiment
  ├── target-page-type-1
  |   ├── index.css
  |   ├── foo-template.html
- |   └── index.js
+ |   └── bundle.js
  ├── target-page-type-2
  |   ├── bar.js
  |   ├── foo.js
- |   └── index.js
+ |   └── bundle.js
 ...
  └── target-page-type-n
-     └── index.js
+     └── bundle.js
 ```
-Even though this project contains many js files, not all of them will be browserified. This are the rules that foso use to identify browserify entries:
+Even though this project contains many js files, only the ones called bundle.js will be browserified and renamed to the folder name containing them.
 
-* The file has to be named index.js
-* The file has to be one folder deep from the root directory
-* The folder name in which the file is shouldn't start with an underscore
-
-Entry points:
-```
-/homepage/index.js
-/default/index.js
-/chat/index.js
-```
-Not entry points:
-```
-/_homepage/index.js
-/homepage/foo.js
-/homepage/chat/index.js
-```
 
 ## Linking everything together
 
