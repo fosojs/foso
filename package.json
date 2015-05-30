@@ -19,7 +19,7 @@
   "homepage": "https://github.com/zkochan/foso",
   "preferGlobal": true,
   "bin": {
-    "foso": "index.js"
+    "foso": "lib/cli.js"
   },
   "dependencies": {
     "babelify": "^6.1.1",
