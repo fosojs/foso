@@ -36,6 +36,7 @@
     "lodash": "^3.8.0",
     "node-lessify": "0.0.10",
     "normalize-path": "^1.0.0",
+    "redirectify": "^1.4.0",
     "serve-static": "^1.9.3",
     "stringify": "^3.1.0",
     "tiny-lr": "^0.1.5",
