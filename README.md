@@ -1,4 +1,4 @@
-# Foso  [![Dependency Status](https://david-dm.org/zkochan/foso/status.svg?style=flat)](https://david-dm.org/zkochan/foso) [![Build Status](http://img.shields.io/travis/zkochan/foso.svg?style=flat)](https://travis-ci.org/zkochan/foso)
+# Foso  [![Dependency Status](https://david-dm.org/zkochan/foso/status.svg?style=flat)](https://david-dm.org/zkochan/foso) [![Build Status](http://img.shields.io/travis/zkochan/foso.svg?style=flat)](https://travis-ci.org/zkochan/foso) [![npm version](https://badge.fury.io/js/foso.svg)](http://badge.fury.io/js/foso)
 
 A static server for bundling and serving JavaScript resources.
 
