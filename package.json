@@ -1,6 +1,6 @@
 {
   "name": "foso",
-  "version": "0.7.0",
+  "version": "0.7.1",
   "description": "A static server for bundling and serving JavaScripts.",
   "repository": {
     "type": "git",
@@ -25,7 +25,7 @@
     "chalk": "^1.0.0",
     "commander": "^2.8.1",
     "connect": "^3.3.5",
-    "fosify": "0.0.4",
+    "fosify": "^0.1.1",
     "glob-watcher": "^2.0.0",
     "lodash": "^3.8.0",
     "normalize-path": "^1.0.0",
