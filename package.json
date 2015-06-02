@@ -1,6 +1,6 @@
 {
   "name": "foso",
-  "version": "0.7.3",
+  "version": "0.7.4",
   "description": "A static server for bundling and serving JavaScripts.",
   "repository": {
     "type": "git",
@@ -19,7 +19,7 @@
   "homepage": "https://github.com/zkochan/foso",
   "preferGlobal": true,
   "bin": {
-    "foso": "lib/cli.js"
+    "foso": "./lib/cli.js"
   },
   "dependencies": {
     "chalk": "^1.0.0",
