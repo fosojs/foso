@@ -1,6 +1,6 @@
 {
   "name": "foso",
-  "version": "0.7.7",
+  "version": "0.7.8",
   "description": "A static server for bundling and serving JavaScripts.",
   "repository": {
     "type": "git",
@@ -25,10 +25,13 @@
     "chalk": "^1.0.0",
     "commander": "^2.8.1",
     "connect": "^3.3.5",
-    "fosify": "^0.3.2",
+    "fosify": "^0.3.3",
     "lodash": "^3.8.0",
     "normalize-path": "^1.0.0",
     "serve-static": "^1.9.3",
     "update-notifier": "^0.5.0"
+  },
+  "publishConfig": {
+    "registry": "http://registry.npmjs.org"
   }
 }
