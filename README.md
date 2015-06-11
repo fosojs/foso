@@ -1,6 +1,10 @@
-# Foso  [![Dependency Status](https://david-dm.org/zkochan/foso/status.svg?style=flat)](https://david-dm.org/zkochan/foso) [![Build Status](http://img.shields.io/travis/zkochan/foso.svg?style=flat)](https://travis-ci.org/zkochan/foso) [![npm version](https://badge.fury.io/js/foso.svg)](http://badge.fury.io/js/foso)
+# Foso
 
 A static server for bundling and serving JavaScript resources.
+
+[![Dependency Status](https://david-dm.org/zkochan/foso/status.svg?style=flat)](https://david-dm.org/zkochan/foso)
+[![Build Status](http://img.shields.io/travis/zkochan/foso.svg?style=flat)](https://travis-ci.org/zkochan/foso)
+[![npm version](https://badge.fury.io/js/foso.svg)](http://badge.fury.io/js/foso)
 
 ## Why is it needed?
 
@@ -18,7 +22,28 @@ You can read more about using Foso with Optimizely [here](http://kochan.io/ab/20
 ```
 $ npm install -g foso
 ```
-Add and configure the [Foso Trojan](https://github.com/zkochan/foso-trojan) to all the pages that you want to work with.
+
+Reference the files that you are serving on your pages. For example, on non-secure pages you'll have to add something like this:
+``` html
+<script src="http://localhost:1769/index.js"></script>
+```
+The secure endpoint is `https://localhost:1770`.
+
+You can also add the links using [Kibe](https://github.com/zkochan/kibe). With Kibe you'll just have to write something like
+
+``` js
+kibe({
+  foso: function(mode) {
+    var isSecure = location.protocol === 'https:';
+    return [
+      location.protocol,
+      '//localhost:',
+      isSecure ? 1770 : 1769,
+      '/index.js'
+    ].join('');
+  }
+});
+```
 
 ## How to use it?
 
@@ -74,7 +99,6 @@ Even though this project contains many js files, only the ones called bundle.js 
 JavaScript, CSS and HTML files can be bundled using `require('modules')`.
 
 
-License
-========
+##License
 
 The MIT License (MIT)
