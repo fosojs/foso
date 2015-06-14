@@ -6,6 +6,8 @@ A static server for bundling and serving JavaScript resources.
 [![Build Status](http://img.shields.io/travis/zkochan/foso.svg?style=flat)](https://travis-ci.org/zkochan/foso)
 [![npm version](https://badge.fury.io/js/foso.svg)](http://badge.fury.io/js/foso)
 
+![](topimg.jpg)
+
 ## Why is it needed?
 
 It can be useful for developing A/B tests or preparing some scripts for DTM.
