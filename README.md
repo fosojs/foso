@@ -101,6 +101,6 @@ Even though this project contains many js files, only the ones called bundle.js 
 JavaScript, CSS and HTML files can be bundled using `require('modules')`.
 
 
-##License
+## License
 
 The MIT License (MIT)
