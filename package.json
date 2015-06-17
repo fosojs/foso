@@ -1,6 +1,6 @@
 {
   "name": "foso",
-  "version": "0.8.2",
+  "version": "0.8.3",
   "description": "A static server for bundling and serving JavaScripts.",
   "repository": {
     "type": "git",
@@ -9,9 +9,14 @@
   "keywords": [
     "foso",
     "server",
+    "fosify",
     "browserify"
   ],
-  "author": "Zoltan Kochan",
+  "author": {
+    "name": "Zoltan Kochan",
+    "email": "zoltan.kochan@gmail.com",
+    "url": "http://kochan.io"
+  },
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/zkochan/foso/issues"
@@ -26,7 +31,7 @@
     "commander": "^2.8.1",
     "connect": "^3.3.5",
     "fosify": "^0.4.2",
-    "fosify-js": "0.0.3",
+    "fosify-js": "^0.1.0",
     "lodash": "^3.8.0",
     "normalize-path": "^1.0.0",
     "serve-static": "^1.9.3",
