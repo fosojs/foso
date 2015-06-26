@@ -26,13 +26,15 @@
   "bin": {
     "foso": "./lib/cli.js"
   },
+  "scripts": {
+    "test": "mocha test/**/*.js"
+  },
   "dependencies": {
     "chalk": "^1.0.0",
     "commander": "^2.8.1",
+    "configstore": "^1.1.0",
     "connect": "^3.3.5",
     "fosify": "^0.4.2",
-    "fosify-html": "0.0.1",
-    "fosify-js": "^0.1.1",
     "lodash": "^3.8.0",
     "normalize-path": "^1.0.0",
     "serve-static": "^1.9.3",
@@ -40,5 +42,9 @@
   },
   "publishConfig": {
     "registry": "http://registry.npmjs.org"
+  },
+  "devDependencies": {
+    "mocha": "^2.2.5",
+    "mockery": "^1.4.0"
   }
 }

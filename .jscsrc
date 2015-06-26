@@ -16,6 +16,6 @@
     "excludeFiles": [
         "test/data/**"
     ],
-    
+
     "requirePaddingNewLinesAfterUseStrict": true
 }
