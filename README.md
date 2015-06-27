@@ -2,8 +2,8 @@
 
 A convention over configuration bundler.
 
-[![Dependency Status](https://david-dm.org/zkochan/foso/status.svg?style=flat)](https://david-dm.org/zkochan/foso)
-[![Build Status](http://img.shields.io/travis/zkochan/foso.svg?style=flat)](https://travis-ci.org/zkochan/foso)
+[![Dependency Status](https://david-dm.org/fosojs/foso/status.svg?style=flat)](https://david-dm.org/fosojs/foso)
+[![Build Status](http://img.shields.io/travis/fosojs/foso.svg?style=flat)](https://travis-ci.org/fosojs/foso)
 [![npm version](https://badge.fury.io/js/foso.svg)](http://badge.fury.io/js/foso)
 
 ![](topimg.jpg)
@@ -32,10 +32,10 @@ Foso does a lot with little effort:
 
 Foso uses plugins to fosify resources. Here are some plugins available for foso:
 
-* [Fosify JS](https://github.com/zkochan/fosify-js)
-* [Fosify Less](https://github.com/zkochan/fosify-less)
-* [Fosify Sass](https://github.com/zkochan/fosify-sass)
-* [Fosify HTML](https://github.com/zkochan/fosify-html)
+* [fosify-js](https://github.com/fosojs/fosify-js)
+* [fosify-less](https://github.com/fosojs/fosify-less)
+* [fosify-sass](https://github.com/fosojs/fosify-sass)
+* [fosify-html](https://github.com/fosojs/fosify-html)
 
 
 ## Why is it convention over configuration?
@@ -92,4 +92,4 @@ To bundle and serve your resources, run `foso serve`.
 
 The MIT License (MIT)
 
-[fosify-js]: https://github.com/zkochan/fosify-js
+[fosify-js]: https://github.com/fosojs/fosify-js
