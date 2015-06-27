@@ -1,16 +1,17 @@
 {
   "name": "foso",
-  "version": "0.9.0",
-  "description": "A static server for bundling and serving JavaScripts.",
+  "version": "0.9.1",
+  "description": "A convention over configuration bundler.",
   "repository": {
     "type": "git",
-    "url": "https://github.com/zkochan/foso.git"
+    "url": "https://github.com/fosojs/foso.git"
   },
   "keywords": [
     "foso",
     "server",
     "fosify",
-    "browserify"
+    "browserify",
+    "bundler"
   ],
   "author": {
     "name": "Zoltan Kochan",
@@ -19,10 +20,11 @@
   },
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/zkochan/foso/issues"
+    "url": "https://github.com/fosojs/foso/issues"
   },
-  "homepage": "https://github.com/zkochan/foso",
+  "homepage": "https://github.com/fosojs/foso",
   "preferGlobal": true,
+  "main": "./lib",
   "bin": {
     "foso": "./lib/cli.js"
   },
@@ -30,14 +32,16 @@
     "test": "mocha test/**/*.js"
   },
   "dependencies": {
+    "async": "^1.2.1",
     "chalk": "^1.0.0",
     "commander": "^2.8.1",
     "configstore": "^1.1.0",
     "connect": "^3.3.5",
-    "fosify": "^0.4.2",
+    "gaze": "^0.5.1",
     "lodash": "^3.8.0",
     "normalize-path": "^1.0.0",
     "serve-static": "^1.9.3",
+    "tiny-lr": "^0.1.6",
     "update-notifier": "^0.5.0"
   },
   "publishConfig": {

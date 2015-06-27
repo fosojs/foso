@@ -1,6 +1,6 @@
-# Foso
+# foso
 
-A static server for bundling and serving JavaScript resources.
+A convention over configuration bundler.
 
 [![Dependency Status](https://david-dm.org/zkochan/foso/status.svg?style=flat)](https://david-dm.org/zkochan/foso)
 [![Build Status](http://img.shields.io/travis/zkochan/foso.svg?style=flat)](https://travis-ci.org/zkochan/foso)
@@ -8,99 +8,88 @@ A static server for bundling and serving JavaScript resources.
 
 ![](topimg.jpg)
 
-## Why is it needed?
-
-It can be useful for developing A/B tests or preparing some scripts for DTM.
-
-Foso is especially usefull for writing Optimizely experiments.
-A/B testing tools like Optimizely are not good for code writing. Writing code in the browser and reloading the target page every time the code was changed is simply not effective.
-
-With Foso it is possible to write all the code in an editor and the page will be updated automatically each time the code changes were saved.
-
-You can read more about using Foso with Optimizely [here](http://kochan.io/ab/2015/05/22/coding-ab-tests-effectively.html).
 
 ## How to install it?
 
 ```
-$ npm install -g foso
+$ npm install --save-dev foso
 ```
 
-Reference the files that you are serving on your pages. For example, on non-secure pages you'll have to add something like this:
-``` html
-<script src="http://localhost:1769/index.js"></script>
-```
-The secure endpoint is `https://localhost:1770`.
 
-You can also add the links using [Kibe](https://github.com/zkochan/kibe). With Kibe you'll just have to write something like
+## Why not Gulp/Grunt or friends?
+
+Gulp is a great task runner and has many libraries for bundling JavaScript and styles. However, a lot of configuration has to be done, to write a good gulpfile. Foso's manifesto is simplicity: everything should be bundled with zero configuration.
+
+Foso does a lot with little effort:
+
+* Bundles the resources with the plugins you install.
+* Watches for changes in the source files and rebundles them on change.
+* Starts a LiveReload server that will reload the browser each time a bundle was updated.
+* Optionally also hosts your resources with a static server.
+
+
+## Plugins
+
+Foso uses plugins to fosify resources. Here are some plugins available for foso:
+
+* [Fosify JS](https://github.com/zkochan/fosify-js)
+* [Fosify Less](https://github.com/zkochan/fosify-less)
+* [Fosify Sass](https://github.com/zkochan/fosify-sass)
+* [Fosify HTML](https://github.com/zkochan/fosify-html)
+
+
+## Why is it convention over configuration?
+
+Lets see why foso is convention over configuration on the example of the [Fosify JS][fosify-js] plugin.
+
+When using vanilla Browserify, each JavaScript file that has to be bundled needs to be specified. Fosify will bundle 2 types of JavaScript files:
+
+1. Files that are named **bundle.js** and are not in the root source directory. This files will be bundled, moved one folder up in the destination directory and renamed to the containing folder. For example, **/src/foo/bundle.js** would be bundled to **/dest/foo.js**.
+2. Files named **[something].bundle.js**. This files will be moved to the same directory as in the source folder and will be renamed, so that the bundle suffix is gone. For example, **/src/foo/bar.bundle.js** would be bundled to **/dest/foo/bar.js**.
+
+The same conventions work for the less and sass/scss files.
+
+
+## Usage example in the code
 
 ``` js
-kibe({
-  foso: function(mode) {
-    var isSecure = location.protocol === 'https:';
-    return [
-      location.protocol,
-      '//localhost:',
-      isSecure ? 1770 : 1769,
-      '/index.js'
-    ].join('');
-  }
-});
+var foso = require('foso');
+var less = require('fosify-less');
+
+foso
+  .please({
+    src: './public',
+    dest: './build',
+    watch: true,
+    minify: true
+  })
+  .fosify(less)
+  .now();
 ```
 
-## How to use it?
+## Using foso as a CLI tool
 
-The project structure has to be the following in order to work with Foso.
+Everything that is foso you can use from the command line. To use foso as a CLI tool, install it globally:
+
 ```
-my-experiment
- ├── target-page-type-1
- │   └── bundle.js
- ├── target-page-type-2
- |   └── bundle.js
-...
- └── target-page-type-n
-     └── bundle.js
+npm install -g foso
 ```
-Running **foso serve** in the root directory will [browserify](http://browserify.org/) all the bundle.js files in the target folders and serve them on http://localhost:1769
 
-The foso server will host the bundled resources:
+However, foso is nothing without its plugins. When you install foso plugins globally, they will be used by foso every time you run it. Install some foso plugins globally:
+
 ```
-- target-page-type-1.js
-- target-page-type-2.js
-...
-- target-page-type-n.js
+npm install -g fosify-js fosify-less fosify-html
 ```
-To see how the scripts are affecting the website, run `foso.on()` in the console of the page. Foso scripts will be always added to the page until `foso.off()` is executed.
 
-## It can contain more files
+Now that you have foso and some plugins installed, you can use it to bundle/host your resources.
 
-The project structure above only shows the files that will be used as entry points for browserify. However, the project can contain many other files and not only JavaScript files.
-```
-my-experiment
- ├── components
- |   └── live-chat
- |       ├── index.js
- |       ├── index.css
- |       └── index.html
- ├── target-page-type-1
- |   ├── index.css
- |   ├── foo-template.html
- |   └── bundle.js
- ├── target-page-type-2
- |   ├── bar.js
- |   ├── foo.js
- |   └── bundle.js
-...
- └── target-page-type-n
-     └── bundle.js
-```
-Even though this project contains many js files, only the ones called bundle.js will be browserified and renamed to the folder name containing them.
+If you want to bundle resources in the current working directory then run `foso build`. To bundle and minify your resources, run `foso build -m`.
 
-
-## Linking everything together
-
-JavaScript, CSS and HTML files can be bundled using `require('modules')`.
+To bundle and serve your resources, run `foso serve`.
 
 
 ## License
 
 The MIT License (MIT)
+
+[fosify-js]: https://github.com/zkochan/fosify-js

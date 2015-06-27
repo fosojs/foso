@@ -13,17 +13,25 @@ describe('Bundle', function() {
   });
 
   it('adds all the registered plugins', function(done) {
-    mockery.registerMock('fosify', function fosify(opts) {
+
+    function FosoMock() {
       var plugins = [];
-      return {
-        plugin: function(newPlugin) {
-          plugins.push(newPlugin);
-        },
-        bundle: function() {
-          assert.equal(plugins.length, 2);
-          done();
-        }
+
+      this.fosify = function(newPlugin) {
+        plugins.push(newPlugin);
+        return this;
       };
+
+      this.now = function() {
+        assert.equal(plugins.length, 2);
+        done();
+      };
+    }
+
+    mockery.registerMock('./', {
+      please: function() {
+        return new FosoMock();
+      }
     });
 
     mockery.registerMock('configstore', function Configstore() {

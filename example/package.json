@@ -1,0 +1,16 @@
+{
+  "name": "example",
+  "version": "1.0.0",
+  "description": "",
+  "main": "fosofile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "fosify-js": "0.0.2",
+    "fosify-less": "0.0.2",
+    "fosify-sass": "0.0.2"
+  }
+}
