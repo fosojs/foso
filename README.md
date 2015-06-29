@@ -3,8 +3,9 @@
 A convention over configuration bundler.
 
 [![Dependency Status](https://david-dm.org/fosojs/foso/status.svg?style=flat)](https://david-dm.org/fosojs/foso)
-[![Build Status](http://img.shields.io/travis/fosojs/foso.svg?style=flat)](https://travis-ci.org/fosojs/foso)
+[![Build Status](https://travis-ci.org/fosojs/foso.svg?branch=master)](https://travis-ci.org/fosojs/foso)
 [![npm version](https://badge.fury.io/js/foso.svg)](http://badge.fury.io/js/foso)
+[![Join the chat at https://gitter.im/fosojs/foso](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/fosojs/foso?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
 ![](topimg.jpg)
 
