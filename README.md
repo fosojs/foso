@@ -59,8 +59,8 @@ var less = require('fosify-less');
 
 foso
   .please({
-    src: './public',
-    dest: './build',
+    src: './',
+    dest: './dist',
     watch: true,
     minify: true
   })

@@ -9,8 +9,8 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "fosify-js": "0.0.2",
-    "fosify-less": "0.0.2",
-    "fosify-sass": "0.0.2"
+    "fosify-js": "^0.1.3",
+    "fosify-less": "^0.1.1",
+    "fosify-sass": "^0.1.0"
   }
 }
