@@ -8,7 +8,7 @@ var sass = require('fosify-sass');
 foso
   .please({
     src: './scripts',
-    dest: './build',
+    dest: './dist',
     host: 'example.com',
     secureHost: 'secure.example.com',
     watch: true,
