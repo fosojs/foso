@@ -33,10 +33,11 @@ Foso does a lot with little effort:
 
 Foso uses plugins to fosify resources. Here are some plugins available for foso:
 
-* [fosify-js](https://github.com/fosojs/fosify-js)
-* [fosify-less](https://github.com/fosojs/fosify-less)
-* [fosify-sass](https://github.com/fosojs/fosify-sass)
-* [fosify-html](https://github.com/fosojs/fosify-html)
+* [fosify-js][]
+* [fosify-less][]
+* [fosify-sass][]
+* [fosify-html][]
+* [fosify-test][]
 
 
 ## Why is it convention over configuration?
@@ -94,3 +95,7 @@ To bundle and serve your resources, run `foso serve`.
 The MIT License (MIT)
 
 [fosify-js]: https://github.com/fosojs/fosify-js
+[fosify-less]: https://github.com/fosojs/fosify-less
+[fosify-sass]: https://github.com/fosojs/fosify-sass
+[fosify-html]: https://github.com/fosojs/fosify-html
+[fosify-test]: https://github.com/fosojs/fosify-test
