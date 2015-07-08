@@ -135,24 +135,24 @@ foso watch -m
 ```
 
 
-### Bundle
+### Build
 
 Bundles the resources in the current working directory.
 
 Example:
 ```bash
-foso bundle
+foso build
 ```
 
 You can also specify the list of plugins that will be used against the resources.
 By default all the plugins will be used.
 ```bash
-foso bundle js less
+foso build js less
 ```
 
 For minifying the resources you can use the `-m` option.
 ```bash
-foso bundle -m
+foso build -m
 ```
 
 
