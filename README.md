@@ -85,9 +85,75 @@ npm install -g fosify-js fosify-less fosify-html
 
 Now that you have foso and some plugins installed, you can use it to bundle/host your resources.
 
-If you want to bundle resources in the current working directory then run `foso build`. To bundle and minify your resources, run `foso build -m`.
+## Commands
 
-To bundle and serve your resources, run `foso serve`.
+* [serve](#serve)
+* [watch](#watch)
+* [build](#build)
+
+### Serve
+
+Bundles the resources in the current working directory and sets up a static
+server to host them.
+
+Example:
+```bash
+foso serve
+```
+
+You can also specify the list of plugins that will be used against the resources.
+By default all the plugins will be used.
+```bash
+foso serve js less
+```
+
+For minifying the resources you can use the `-m` option.
+```bash
+foso serve -m
+```
+
+
+### Watch
+
+Bundles the resources in the current working directory and re-bundles them when
+the source files are updated.
+
+Example:
+```bash
+foso watch
+```
+
+You can also specify the list of plugins that will be used against the resources.
+By default all the plugins will be used.
+```bash
+foso watch js less
+```
+
+For minifying the resources you can use the `-m` option.
+```bash
+foso watch -m
+```
+
+
+### Bundle
+
+Bundles the resources in the current working directory.
+
+Example:
+```bash
+foso bundle
+```
+
+You can also specify the list of plugins that will be used against the resources.
+By default all the plugins will be used.
+```bash
+foso bundle js less
+```
+
+For minifying the resources you can use the `-m` option.
+```bash
+foso bundle -m
+```
 
 
 ## License

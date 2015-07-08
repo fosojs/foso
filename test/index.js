@@ -1,6 +1,6 @@
 'use strict';
 
-var assert = require('assert');
+var expect = require('chai').expect;
 var foso = require('../lib');
 
 describe('Foso', function() {
@@ -10,7 +10,7 @@ describe('Foso', function() {
         src: 'foo'
       })
       .fosify(function(opts, cb) {
-        assert.equal(opts.src, 'foo');
+        expect(opts.src).to.equal('foo');
         cb();
         done();
       })

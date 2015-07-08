@@ -1,6 +1,6 @@
 {
   "name": "foso",
-  "version": "0.9.3",
+  "version": "0.9.4",
   "description": "A convention over configuration bundler.",
   "repository": {
     "type": "git",
@@ -23,7 +23,6 @@
   "bugs": {
     "url": "https://github.com/fosojs/foso/issues"
   },
-  "homepage": "https://github.com/fosojs/foso",
   "main": "./lib",
   "bin": {
     "foso": "./lib/cli.js"
@@ -48,6 +47,7 @@
     "registry": "http://registry.npmjs.org"
   },
   "devDependencies": {
+    "chai": "^3.0.0",
     "mocha": "^2.2.5",
     "mockery": "^1.4.0"
   }
