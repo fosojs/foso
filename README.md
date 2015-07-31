@@ -25,7 +25,7 @@ Foso does a lot with little effort:
 
 * Bundles the resources with the plugins you install.
 * Watches for changes in the source files and rebundles them on change.
-* Starts a LiveReload server that will reload the browser each time a bundle was updated.
+* Starts a LiveReload server that reloads the browser each time a bundle was updated.
 * Optionally also hosts your resources with a static server.
 
 
@@ -42,14 +42,14 @@ Foso uses plugins to fosify resources. Here are some plugins available for foso:
 
 ## Why is it convention over configuration?
 
-Lets see why foso is convention over configuration on the example of the [Fosify JS][fosify-js] plugin.
+Lets see why foso is convention over configuration on the example of the [fosify-js][] plugin.
 
 When using vanilla Browserify, each JavaScript file that has to be bundled needs to be specified. Fosify will bundle 2 types of JavaScript files:
 
-1. Files that are named **bundle.js** and are not in the root source directory. This files will be bundled, moved one folder up in the destination directory and renamed to the containing folder. For example, **/src/foo/bundle.js** would be bundled to **/dest/foo.js**.
-2. Files named **[something].bundle.js**. This files will be moved to the same directory as in the source folder and will be renamed, so that the bundle suffix is gone. For example, **/src/foo/bar.bundle.js** would be bundled to **/dest/foo/bar.js**.
+1. Files that are named `bundle.js` and are not in the source root directory. These files will be bundled, moved one folder up in the destination directory and renamed to the containing folder. For example, `/src/foo/bundle.js` would be bundled to `/dest/foo.js`.
+2. Files named `[something].bundle.js`. These files will be moved to the same directory as in the source folder and will be renamed, so that the bundle suffix is gone. For example, `/src/foo/bar.bundle.js` would be bundled to `/dest/foo/bar.js`.
 
-The same conventions work for the less and sass/scss files.
+The same conventions are applied in the other fosify plugins.
 
 
 ## Usage example in the code
@@ -159,6 +159,7 @@ foso build -m
 ## License
 
 The MIT License (MIT)
+
 
 [fosify-js]: https://github.com/fosojs/fosify-js
 [fosify-less]: https://github.com/fosojs/fosify-less
