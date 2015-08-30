@@ -1,6 +1,6 @@
 {
   "name": "foso",
-  "version": "0.9.6",
+  "version": "0.10.0",
   "description": "A convention over configuration bundler.",
   "repository": {
     "type": "git",
