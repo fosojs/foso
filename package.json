@@ -37,8 +37,8 @@
     "configstore": "^1.1.0",
     "connect": "^3.3.5",
     "gaze": "^0.5.1",
-    "lodash": "^3.8.0",
     "normalize-path": "^1.0.0",
+    "ramda": "^0.17.1",
     "serve-static": "^1.9.3",
     "tiny-lr": "^0.1.6",
     "update-notifier": "^0.5.0"
