@@ -12,7 +12,8 @@ foso
     host: 'example.com',
     secureHost: 'secure.example.com',
     watch: true,
-    minify: true
+    minify: true,
+    serve: true
   })
   .fosify(js)
   .fosify(less)
