@@ -31,24 +31,24 @@
     "test": "mocha test/**/*.js"
   },
   "dependencies": {
-    "async": "^1.2.1",
-    "chalk": "^1.0.0",
-    "commander": "^2.8.1",
-    "configstore": "^1.1.0",
-    "connect": "^3.3.5",
-    "gaze": "^0.5.1",
-    "normalize-path": "^1.0.0",
-    "ramda": "^0.17.1",
-    "serve-static": "^1.9.3",
-    "tiny-lr": "^0.1.6",
+    "async": "^1.4.2",
+    "chalk": "^1.1.1",
+    "commander": "^2.9.0",
+    "configstore": "^1.2.1",
+    "connect": "^3.4.0",
+    "gaze": "^0.5.2",
+    "normalize-path": "^2.0.0",
+    "ramda": "^0.18.0",
+    "serve-static": "^1.10.0",
+    "tiny-lr": "^0.2.1",
     "update-notifier": "^0.5.0"
   },
   "publishConfig": {
     "registry": "http://registry.npmjs.org"
   },
   "devDependencies": {
-    "chai": "^3.0.0",
-    "mocha": "^2.2.5",
+    "chai": "^3.3.0",
+    "mocha": "^2.3.3",
     "mockery": "^1.4.0"
   }
 }
