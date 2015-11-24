@@ -23,7 +23,7 @@
   "bugs": {
     "url": "https://github.com/fosojs/foso/issues"
   },
-  "main": "./lib",
+  "main": "./index.js",
   "bin": {
     "foso": "./lib/cli.js"
   },
@@ -39,6 +39,7 @@
     "gaze": "^0.5.2",
     "normalize-path": "^2.0.0",
     "ramda": "^0.18.0",
+    "register-plugin": "^0.5.1",
     "serve-static": "^1.10.0",
     "tiny-lr": "^0.2.1",
     "update-notifier": "^0.5.0"

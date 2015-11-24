@@ -20,24 +20,13 @@ describe('Bundle', function() {
   it('adds all the registered plugins', function(done) {
 
     function FosoMock() {
-      var plugins = [];
-
-      this.fosify = function(newPlugin) {
-        plugins.push(newPlugin);
-        return this;
-      };
-
-      this.now = function() {
+      this.register = function(plugins) {
         expect(plugins.length).to.equal(2);
         done();
       };
     }
 
-    mockery.registerMock('./', {
-      please: function() {
-        return new FosoMock();
-      }
-    });
+    mockery.registerMock('./', FosoMock);
 
     mockery.registerMock('configstore', function Configstore() {
       this.get = function() {
@@ -63,25 +52,14 @@ describe('Bundle', function() {
   it('adds only the required plugins', function(done) {
 
     function FosoMock() {
-      var plugins = [];
-
-      this.fosify = function(newPlugin) {
-        plugins.push(newPlugin);
-        return this;
-      };
-
-      this.now = function() {
+      this.register = function(plugins) {
         expect(plugins.length).to.equal(1);
         expect(plugins[0]).to.equal('bar');
         done();
       };
     }
 
-    mockery.registerMock('./', {
-      please: function() {
-        return new FosoMock();
-      }
-    });
+    mockery.registerMock('./', FosoMock);
 
     mockery.registerMock('configstore', function Configstore() {
       this.get = function() {

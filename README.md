@@ -59,14 +59,13 @@ var foso = require('foso');
 var less = require('fosify-less');
 
 foso
-  .please({
+  .register(less, {
     src: './',
     dest: './dist',
     watch: true,
     minify: true
   })
-  .fosify(less)
-  .now();
+  .then(() => foso.bundle());
 ```
 
 ## Using foso as a CLI tool

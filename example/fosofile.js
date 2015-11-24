@@ -1,12 +1,14 @@
 'use strict';
 
-var foso = require('../');
-var js = require('fosify-js');
-var less = require('fosify-less');
-var sass = require('fosify-sass');
+let Foso = require('../');
+let js = require('fosify-js');
+let less = require('fosify-less');
+let sass = require('fosify-sass');
+
+let foso = new Foso();
 
 foso
-  .please({
+  .register([js, less, sass], {
     src: './scripts',
     dest: './dist',
     host: 'example.com',
@@ -15,9 +17,6 @@ foso
     minify: true,
     serve: true
   })
-  .fosify(js)
-  .fosify(less)
-  .fosify(sass)
-  .now(function() {
-    console.log('bundled');
-  });
+  .then(() => foso.bundle())
+  .then(() => console.log('bundled'))
+  .catch(err => console.error(err));
