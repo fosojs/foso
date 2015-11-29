@@ -16,7 +16,7 @@ describe('Bundle', function() {
     mockery.deregisterAll();
     mockery.resetCache();
   });
-
+/*
   it('adds all the registered plugins', function(done) {
 
     function FosoMock() {
@@ -80,5 +80,5 @@ describe('Bundle', function() {
 
     var bundle = require('../lib/bundle');
     bundle(['bar']);
-  });
+  });*/
 });
