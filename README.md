@@ -55,9 +55,10 @@ The same conventions are applied in the other fosify plugins.
 ## Usage example in the code
 
 ``` js
-var foso = require('foso');
+var Foso = require('foso');
 var less = require('fosify-less');
 
+var foso = new Foso();
 foso
   .register(less, {
     src: './',
