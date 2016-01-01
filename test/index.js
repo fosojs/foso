@@ -7,15 +7,18 @@ describe('Foso', function() {
   it('should pass options to the plugin', function(done) {
     var foso = new Foso();
     function plugin(app, opts, next) {
-      expect(opts.src).to.equal('foo');
+      expect(opts.src).to.contain('/foo');
       next();
     }
     plugin.attributes = {
       name: 'plugin',
       version: '1.0.0'
     };
-    foso.register(plugin, {
-      src: 'foo'
-    }).then(done);
+    foso
+      .register(plugin, {
+        src: 'foo'
+      })
+      .then(done)
+      .catch(err => console.log(err));
   });
 });
