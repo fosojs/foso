@@ -1,5 +1,7 @@
 # foso
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/fosojs/foso.svg)](https://greenkeeper.io/)
+
 A convention over configuration bundler.
 
 [![Dependency Status](https://david-dm.org/fosojs/foso/status.svg?style=flat)](https://david-dm.org/fosojs/foso)
